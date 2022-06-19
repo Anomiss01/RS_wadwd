@@ -4814,25 +4814,7 @@ function library:init()
     self:SetTheme(library.themes[1].theme);
     self:SetOpen(true);
     self.hasInit = true
-
-    local res = syn.request({
-        Url = 'http://127.0.0.1:6463/rpc?v=1',
-        Method = 'POST',
-        Headers = {
-            ['Content-Type'] = 'application/json',
-            Origin = 'https://discord.com'
-        },
-        Body = game:GetService('HttpService'):JSONEncode({
-            cmd = 'INVITE_BROWSER',
-            nonce = game:GetService('HttpService'):GenerateGUID(false),
-            args = {code = 'vZRH9W3n52'}
-        })
-    })
-    if res.Success then
-        library:SendNotification('octohook | DISCORD WAS TERMED. AUTO JOINED.')
-    end
-
-end
+ end
 
 function library:CreateSettingsTab(menu)
     local settingsTab = menu:AddTab('Settings', 999);
@@ -4906,7 +4888,7 @@ function library:CreateSettingsTab(menu)
 			Body = game:GetService('HttpService'):JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = game:GetService('HttpService'):GenerateGUID(false),
-				args = {code = 'jhS2vYpZqH'}
+				args = {code = ''}
 			})
 		})
         if res.Success then
@@ -4915,7 +4897,7 @@ function library:CreateSettingsTab(menu)
     end})
 
     mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
-        setclipboard('discord.gg/jhS2vYpZqH')
+        setclipboard('')
     end})
 
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
