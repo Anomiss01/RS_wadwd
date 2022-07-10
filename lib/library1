@@ -253,7 +253,7 @@ library.themes = {
     }
 }
 
-library.signal = loadstring(game:HttpGetAsync('https://octohook.xyz/module/SD7rGwJqF3DvQpiE0dOQHYmEfaygf2VkxrTbQmZO7P6uVBRfJF.signal.lua'))();
+library.signal = loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/Anomiss01/RS_wadwd/main/lib/signal.lua'))();
 
 local blacklistedKeys = {
 	Enum.KeyCode.Unknown,
