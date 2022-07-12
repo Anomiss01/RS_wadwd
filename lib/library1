@@ -4844,7 +4844,7 @@ function library:CreateSettingsTab(menu)
 
     refreshConfigs()
 
-    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, default = Enum.KeyCode.LeftAlt, bind = Enum.KeyCode.End, callback = function()
+    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, default = Enum.KeyCode.LeftAlt, bind = Enum.KeyCode.LeftAlt, callback = function()
         library:SetOpen(not library.open)
     end});
 
@@ -4874,7 +4874,7 @@ function library:CreateSettingsTab(menu)
 			Body = game:GetService('HttpService'):JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = game:GetService('HttpService'):GenerateGUID(false),
-				args = {code = ''}
+				args = {code = 'https://discord.gg/XUyqnmY3'}
 			})
 		})
         if res.Success then
@@ -4883,7 +4883,7 @@ function library:CreateSettingsTab(menu)
     end})
 
     mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
-        setclipboard('')
+        setclipboard('https://discord.gg/XUyqnmY3')
     end})
 
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
