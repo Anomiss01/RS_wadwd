@@ -910,8 +910,7 @@ function library:init()
     utility:Connection(inputservice.InputChanged, function(input, gpe)
         if input.UserInputType == Enum.UserInputType.MouseMovement then
 
-            mousemove:Fire(inputservice:GetMouseLocation());
-            updateCursor();
+            mousemove:Fire(inputservice:GetMouseLocation())
 
             if library.CurrentTooltip ~= nil then
                 local mousePos = inputservice:GetMouseLocation()
