@@ -63,7 +63,7 @@ local library = {
     open = false;
     opening = false;
     hasInit = false;
-    cheatname = startupArgs.cheatname or 'octohook';
+    cheatname = startupArgs.cheatname;
     gamename = startupArgs.gamename or 'universal';
     fileext = startupArgs.fileext or '.txt';
 }
@@ -841,7 +841,7 @@ function library:init()
         end
     end
 
-    local screenGui = Instance.new('ScreenGui');
+    --[[local screenGui = Instance.new('ScreenGui');
     if syn then syn.protect_gui(screenGui); end
     screenGui.Parent = game:GetService('CoreGui');
     screenGui.Enabled = true;
@@ -856,7 +856,7 @@ function library:init()
 
     utility:Connection(library.unloaded, function()
         screenGui:Destroy()
-    end)
+    end)]]
 
     local namecall; namecall = hookmetamethod(game, '__namecall', function(obj, ...)
         if getnamecallmethod() == 'Destroy' and library.instances[obj] ~= nil then
@@ -959,7 +959,7 @@ function library:init()
     
     function self:SetOpen(bool)
         self.open = bool;
-        screenGui.Enabled = bool;
+        --screenGui.Enabled = bool;
 
         if bool and library.flags.disablemenumovement then
             actionservice:BindAction(
