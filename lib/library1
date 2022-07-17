@@ -52,10 +52,10 @@ local library = {
         ['ping'] = 0;
     };
     images = {
-        ['gradientp90'] = 'https://www.octohook.xyz/assets/ay2rnhSSVKCQtUKYYdPPH5pH37XZHHNwpvNrva9c1jsVqmOVfO.png';
-        ['gradientp45'] = 'https://octohook.xyz/assets/p0JnYfBJi5NWh0dH8O8Cozx0eNRP5Y2HXyTd4TYKuQcWto2RSG.png';
-        ['colorhue'] = 'https://www.octohook.xyz/assets/0RPDNQ1FfZWtmHvX9glFYW85MCUB8SYaDOyibFWE4eVs6TE6vt.png';
-        ['colortrans'] = 'https://octohook.xyz/assets/I05svPLPJk73c1oLlcXAPd907vcRrUnmTjTzK1zaXjYnFGYSoK.png';
+        ['gradientp90'] = 'https://i.ibb.co/12Rnbdy/b-MTl-Z7-Zlh6qwfjd-BM3t-WEU95-KYG6-Aa-Pt6-Yxa-NRQv-Qj-ROim1-Q78.png';
+        ['gradientp45'] = 'https://i.ibb.co/XbmdCZC/y-Bl-Cp-Oju-JXSGu-Bat-Jo-Rot5-Ii-Bzt-LDY24mkrdwsra-Hs-YTJvj-Snn.png';
+        ['colorhue'] = 'https://i.ibb.co/740d7fH/gradient.png';
+        ['colortrans'] = 'https://i.ibb.co/0h9xN7t/gradient2.png';
         ['colorsat1'] = 'https://t5.rbxcdn.com/b6ce2f465dbe0ca4bf88d45ac4be1362';
         ['colorsat2'] = 'https://t4.rbxcdn.com/0c51aa9d7f2ede5c635c2f44f66be88f';
     };
