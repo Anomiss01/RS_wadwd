@@ -750,10 +750,16 @@ function library:init()
                     elseif option.class == 'bind' then
                         option:SetBind((utility:HasProperty(Enum.KeyCode, value) and Enum.KeyCode[value]) or (utility:HasProperty(Enum.UserInputType, value) and Enum.UserInputType[value] ) or value or 'none');
                     elseif option.class == 'color' then
-                        if value == nil then value = {1,1,1,0} end
+                        if value == nil then 
+                            value = {1,1,1,0} 
+                        end
                         if value == option.default then
                             local c3, a = option.default, option.defaulttrans or 0;
                             value = {c3.R, c3.G, c3.B, a}
+                        end
+                        if flag == "theme_accent" then
+                            library.theme.Accent = value
+                            library:SetTheme(library.theme)
                         end
                         option:SetColor(c3new(value[1], value[2], value[3]));
                         option:SetTrans(value[4]);
@@ -810,21 +816,6 @@ function library:init()
         end
     end
 
-    --[[for i,v in next, self.images do
-        if not isfile(self.cheatname..'/assets/'..i..'.oh') then
-            print('downloading '..i..' to image cache')
-            writefile(self.cheatname..'/assets/'..i..'.txt',
-                syn.crypt.custom.encrypt(
-                    'aes-ctr',
-                    game:HttpGet(v),
-                    '4XGudgFuutoHUM2Ctwsq4YrQ',
-                    'zP5JJWPSIbf5Xuuy'
-                )
-            )
-        end
-        self.images[i] = readfile(self.cheatname..'/assets/'..i..'.txt')
-    end]]
-
     self.cursor1 = utility:Draw('Triangle', {Filled = true, Color = fromrgb(255,255,255), ZIndex = self.zindexOrder.cursor});
     self.cursor2 = utility:Draw('Triangle', {Filled = true, Color = fromrgb(85,85,85), self.zindexOrder.cursor-1});
     local function updateCursor()
@@ -840,23 +831,6 @@ function library:init()
             self.cursor2.PointC = self.cursor1.PointC + newVector2(1, 1)
         end
     end
-
-    --[[local screenGui = Instance.new('ScreenGui');
-    if syn then syn.protect_gui(screenGui); end
-    screenGui.Parent = game:GetService('CoreGui');
-    screenGui.Enabled = true;
-    utility:Instance('ImageButton', {
-        Parent = screenGui,
-        Visible = true,
-        Modal = true,
-        Size = UDim2.new(1,0,1,0),
-        ZIndex = 9999999999,
-        Transparency = 1;
-    })
-
-    utility:Connection(library.unloaded, function()
-        screenGui:Destroy()
-    end)]]
 
     local namecall; namecall = hookmetamethod(game, '__namecall', function(obj, ...)
         if getnamecallmethod() == 'Destroy' and library.instances[obj] ~= nil then
