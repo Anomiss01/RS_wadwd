@@ -2337,11 +2337,7 @@ function library:init()
                             end
 
                         end
-                    end
-
-                    if toggle.callonload and typeof(toggle.callonload) == "boolean" then                       
-                        toggle:SetState(toggle.state);
-                    end
+                    end                    
 
                     function toggle:SetText(str)
                         if typeof(str) == 'string' then
@@ -3059,7 +3055,13 @@ function library:init()
 
                     tooltip(toggle);
                     toggle:SetText(toggle.text);
-                    toggle:SetState(toggle.state, true);
+
+                    if toggle.callonload and typeof(toggle.callonload) == "boolean" then
+                        toggle:SetState(toggle.state, false);
+                    else
+                        toggle:SetState(toggle.state, true);
+                    end                  
+
                     self:UpdateOptions();
                     return toggle
                 end
