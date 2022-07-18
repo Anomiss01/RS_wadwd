@@ -56,7 +56,7 @@ local library = {
         ['gradientp45'] = game:HttpGet("https://i.ibb.co/XbmdCZC/y-Bl-Cp-Oju-JXSGu-Bat-Jo-Rot5-Ii-Bzt-LDY24mkrdwsra-Hs-YTJvj-Snn.png");
         ['colorhue'] = game:HttpGet("https://i.ibb.co/740d7fH/gradient.png");
         ['colortrans'] = game:HttpGet("https://i.ibb.co/0h9xN7t/gradient2.png");
-        --['colorsat1'] = game:HttpGet("https://t5.rbxcdn.com/b6ce2f465dbe0ca4bf88d45ac4be1362");
+        ['colorsat1'] = game:HttpGet("https://i.ibb.co/mz52d7Y/colorsat1.png");
         ['colorsat2'] = game:HttpGet("https://i.ibb.co/VNSSR6s/colorsat2.png");
     };
     numberStrings = {['Zero'] = 0, ['One'] = 1, ['Two'] = 2, ['Three'] = 3, ['Four'] = 4, ['Five'] = 5, ['Six'] = 6, ['Seven'] = 7, ['Eight'] = 8, ['Nine'] = 9};
@@ -1553,19 +1553,19 @@ function library:init()
                     Parent = objs.background;
                 })
 
-               --[[ objs.sat1 = utility:Draw('Image', {
+                objs.sat1 = utility:Draw('Image', {
                     Size = newUDim2(1,0,1,0);
                     Data = library.images.colorsat1;
                     ZIndex = z+3;
                     Parent = objs.mainColor;
-                })]]
+                })
 
-                --[[objs.sat2 = utility:Draw('Image', {
+                objs.sat2 = utility:Draw('Image', {
                     Size = newUDim2(1,0,1,0);
                     Data = library.images.colorsat2;
                     ZIndex = z+4;
                     Parent = objs.mainColor;
-                })]]
+                })
 
                 objs.colorBorder = utility:Draw('Square', {
                     Size = newUDim2(1,2,1,2);
