@@ -2315,11 +2315,7 @@ function library:init()
                         utility:Connection(objs.holder.MouseButton1Down, function()
                             toggle:SetState(not toggle.state);
                         end)
-
-                        if toggle.callonload and typeof(toggle.callonload) == "boolean" then
-                            print("tested")
-                            toggle:SetState(toggle.state);
-                        end
+                        
 
                     end
                     ----------------------
@@ -2341,6 +2337,11 @@ function library:init()
                             end
 
                         end
+                    end
+
+                    if toggle.callonload and typeof(toggle.callonload) == "boolean" then
+                        print("tested2")
+                        toggle:SetState(toggle.state);
                     end
 
                     function toggle:SetText(str)
