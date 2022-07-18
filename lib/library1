@@ -2317,7 +2317,8 @@ function library:init()
                         end)
 
                         if toggle.callonload and typeof(toggle.callonload) == "boolean" then
-                            self.callback(toggle.state)
+                            print("tested")
+                            toggle:SetState(toggle.state);
                         end
 
                     end
