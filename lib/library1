@@ -2339,8 +2339,7 @@ function library:init()
                         end
                     end
 
-                    if toggle.callonload and typeof(toggle.callonload) == "boolean" then
-                        print("tested2")
+                    if toggle.callonload and typeof(toggle.callonload) == "boolean" then                       
                         toggle:SetState(toggle.state);
                     end
 
