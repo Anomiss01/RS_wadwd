@@ -756,11 +756,7 @@ function library:init()
                         if value == option.default then
                             local c3, a = option.default, option.defaulttrans or 0;
                             value = {c3.R, c3.G, c3.B, a}
-                        end
-                        if flag == "theme_accent" then
-                            library.theme.Accent = value
-                            library:SetTheme(library.theme)
-                        end
+                        end                        
                         option:SetColor(c3new(value[1], value[2], value[3]));
                         option:SetTrans(value[4]);
                     elseif option.class == 'list' then
