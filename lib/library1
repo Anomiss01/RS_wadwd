@@ -2229,6 +2229,7 @@ function library:init()
                         order = #self.options+1;
                         state = false;
                         risky = false;
+                        callonload = false;
                         callback = function() end;
                         enabled = true;
                         options = {};
@@ -2314,6 +2315,10 @@ function library:init()
                         utility:Connection(objs.holder.MouseButton1Down, function()
                             toggle:SetState(not toggle.state);
                         end)
+
+                        if toggle.callonload and typeof(toggle.callonload) == "boolean" then
+                            self.callback(toggle.state)
+                        end
 
                     end
                     ----------------------
